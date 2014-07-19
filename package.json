@@ -1,0 +1,54 @@
+{
+  "name": "lookup-path",
+  "description": "Attempt to resolve the absolute filepath to a file and verify that it exists.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jonschlinkert/lookup-path",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/lookup-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/lookup-path/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/lookup-path/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "absolute",
+    "current",
+    "cwd",
+    "directory",
+    "file",
+    "filepath",
+    "find",
+    "join",
+    "lookup",
+    "path",
+    "relative",
+    "resolve",
+    "working"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4",
+    "verb": ">= 0.2.6"
+  },
+  "dependencies": {
+    "is-absolute": "^0.1.4",
+    "normalize-path": "^0.1.1"
+  }
+}
