@@ -9,8 +9,8 @@
 
 var fs = require('fs');
 var path = require('path');
+var debug = require('debug')('lookup-path');
 var isAbsolute = require('is-absolute');
-var normalizePath = require('normalize-path');
 
 
 /**
@@ -26,22 +26,19 @@ var normalizePath = require('normalize-path');
  * @return {String}
  */
 
-module.exports = function lookup(filepath, options) {
-  options = options || {};
-
+module.exports = function lookup(filepath, cwd) {
   if (typeof filepath !== 'string') {
-    // do your own validation for non-strings
-    return filepath;
+    return filepath; // implementors should do their own validation
   }
-
-  var cwd = options.cwd || process.cwd();
+  cwd = cwd || process.cwd();
   if (isAbsolute(filepath)) {
-    return normalizePath(filepath);
+    return filepath;
   } else if (fs.existsSync(path.join(cwd, filepath))) {
-    return normalizePath(path.join(cwd, filepath));
+    return path.join(cwd, filepath);
   } else if (fs.existsSync(path.resolve(cwd, filepath))) {
-    return normalizePath(path.resolve(cwd, filepath));
+    return path.resolve(cwd, filepath);
   } else {
-    throw new Error('lookup-path cannot find: ' + path.join(cwd, filepath));
+    debug('cannot find: %s', filepath);
+    return null;
   }
 };

@@ -12,19 +12,23 @@ var lookup = require('..');
 
 
 describe('lookup', function () {
-
   it('should lookup path', function () {
     var actual = lookup('package.json');
-    (typeof actual === 'string').should.be.true;
+    should.equal(typeof actual, 'string');
   });
 
   it('should lookup path from the cwd', function () {
-    var actual = lookup('package.json', {cwd: process.cwd()});
-    (typeof actual === 'string').should.be.true;
+    var actual = lookup('package.json', process.cwd());
+    should.equal(typeof actual, 'string');
   });
 
   it('should lookup path from the cwd', function () {
-    var actual = lookup('test.js', {cwd: 'test'});
-    (typeof actual === 'string').should.be.true;
+    var actual = lookup('test.js', 'test');
+    should.equal(typeof actual, 'string');
+  });
+
+  it('should return `null` when a path is not found.', function () {
+    var actual = lookup('tesksksks.js');
+    should.equal(actual, null);
   });
 });
