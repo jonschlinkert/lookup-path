@@ -48,7 +48,7 @@
     "verb": ">= 0.2.6"
   },
   "dependencies": {
-    "debug": "^1.0.4",
+    "debug": "^2.2.0",
     "is-absolute": "^0.1.4"
   }
 }
