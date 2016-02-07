@@ -12,7 +12,6 @@ var path = require('path');
 var debug = require('debug')('lookup-path');
 var isAbsolute = require('is-absolute');
 
-
 /**
  * **Example:**
  *
