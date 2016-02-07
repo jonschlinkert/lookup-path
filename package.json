@@ -21,12 +21,11 @@
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "is-absolute": "^0.1.4"
+    "is-absolute": "^0.2.3"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*",
-    "verb": ">= 0.2.6"
+    "should": "*"
   },
   "keywords": [
     "absolute",
@@ -44,8 +43,11 @@
     "working"
   ],
   "verb": {
+    "layout": "default",
+    "plugins": ["gulp-format-md"],
     "related": {
-      "list": []
+      "highlight": "is-absolute",
+      "list": ["is-absolute", "is-relative", "is-windows"]
     }
   }
 }
