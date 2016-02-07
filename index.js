@@ -26,6 +26,7 @@ var isAbsolute = require('is-absolute');
  */
 
 module.exports = function lookup(filepath, cwd) {
+  debug('looking up filepath "%s" at cwd "%s"', filepath, cwd);
   if (typeof filepath !== 'string') {
     return filepath; // implementors should do their own validation
   }
