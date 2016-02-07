@@ -1,7 +1,7 @@
 {
   "name": "lookup-path",
   "description": "Attempt to resolve the absolute filepath to a file and verify that it exists.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/jonschlinkert/lookup-path",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/lookup-path",
